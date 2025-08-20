@@ -541,10 +541,10 @@ name = "jax-metal"
 version = "0.1.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "jax", version = "0.5.0", source = { registry = "https://pypi.org/simple" } },
-    { name = "jaxlib", version = "0.5.0", source = { registry = "https://pypi.org/simple" } },
-    { name = "six" },
-    { name = "wheel" },
+    { name = "jax", version = "0.5.0", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'linux'" },
+    { name = "jaxlib", version = "0.5.0", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'linux'" },
+    { name = "six", marker = "sys_platform != 'linux'" },
+    { name = "wheel", marker = "sys_platform != 'linux'" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/87/ec/9bb7f7f0ffd06c3fb89813126b2f698636ac7a4263ed7bdd1ff7d7c94f8f/jax_metal-0.1.1-py3-none-macosx_10_14_x86_64.whl", hash = "sha256:d918a78443cb808c9491a24a5c2a94cc4eabfd0461d5bcda29a8f332dfbe9b7e", size = 54662235, upload-time = "2024-10-08T16:57:30.128Z" },
@@ -701,10 +701,10 @@ requires-dist = [
     { name = "distrax", specifier = ">=0.1.5" },
     { name = "flax", specifier = ">=0.9.0" },
     { name = "gymnasium", specifier = ">=1.0.0" },
-    { name = "jax", marker = "extra == 'cpu'", specifier = ">=0.5.0" },
+    { name = "jax", marker = "extra == 'cpu'", specifier = "<=0.7.0" },
     { name = "jax", marker = "extra == 'metal'", specifier = "<=0.5.0" },
-    { name = "jax", extras = ["cuda12"], marker = "extra == 'cuda12'", specifier = ">=0.5.0" },
-    { name = "jax", extras = ["tpu"], marker = "extra == 'tpu'", specifier = ">=0.5.0" },
+    { name = "jax", extras = ["cuda12"], marker = "extra == 'cuda12'", specifier = "<0.7.0" },
+    { name = "jax", extras = ["tpu"], marker = "extra == 'tpu'", specifier = "<0.7.0" },
     { name = "jax-metal", marker = "sys_platform == 'darwin' and extra == 'metal'", specifier = ">=0.1.0" },
     { name = "jaxtyping", specifier = ">=0.2.34" },
     { name = "metaworld", git = "https://github.com/reginald-mclean/Metaworld.git?rev=same-step-autoreset" },
