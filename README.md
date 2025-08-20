@@ -6,9 +6,18 @@ Implementations of Multi-Task and Meta-Learning baselines for the Metaworld benc
 ### From a clone of the repository
 
 0. Install [uv](https://docs.astral.sh/uv/)
-1. Create a virtual environment for the project: `uv venv .venv --python 3.12`
-2. Activate the virtual environment: `source .venv/bin/activate`
-3. Install the dependencies: `uv pip install -e ".[cuda12]"`
+1. Create a virtual environment for the project (with Python>=3.12)
+   ```
+   uv venv .venv --python 3.12
+   ```
+3. Activate the virtual environment
+   ```
+   source .venv/bin/activate
+   ```
+5. Install the dependencies
+   ```
+   uv pip install -e ".[cuda12]"
+   ```
 
 > [!Important]
 > Installing this package with no extras specified, i.e. `uv pip install -e .` **will not work**.
@@ -20,9 +29,12 @@ Implementations of Multi-Task and Meta-Learning baselines for the Metaworld benc
 > - `cpu` (No accelerator)
 > - `tpu` (GCP TPUs)
 > - `cuda12` (NVIDIA GPUs)
-> - `metal` (Apple Silicon).
+> - `metal` (Apple Silicon)
 >
-> For example, to install with TPU support, the proper commmand would be `uv pip install -e ".[tpu]"`.
+> For example, to install with TPU support, the proper commmand would be
+> ```
+> uv pip install -e ".[tpu]"
+> ```
 
 
 ## Structure
