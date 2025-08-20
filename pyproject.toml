@@ -18,7 +18,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-cpu = ["jax<=0.7.0"]
+cpu = ["jax<0.7.0"]
 # https://github.com/jax-ml/jax/issues/27062
 metal = ["jax<=0.5.0", "jax-metal>=0.1.0; sys_platform == 'darwin'"]
 cuda12 = ["jax[cuda12]<0.7.0"]
