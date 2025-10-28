@@ -20,6 +20,7 @@ class Args:
     seed: int = 1
     track: bool = False
     wandb_project: str | None = None
+    wandb_group: str | None = None
     wandb_entity: str | None = None
     data_dir: Path = Path("./run_results")
     resume: bool = False
@@ -56,7 +57,7 @@ def main() -> None:
             num_critics=2,
         ),
         training_config=OffPolicyTrainingConfig(
-            total_steps=int(2e7),
+            total_steps=int(2e6),
             buffer_size=int(1e6),
             batch_size=1280,
         ),
@@ -65,12 +66,13 @@ def main() -> None:
     )
 
     if args.track:
-        assert args.wandb_project is not None and args.wandb_entity is not None
+        assert args.wandb_project is not None
         run.enable_wandb(
             project=args.wandb_project,
             entity=args.wandb_entity,
             config=run,
             resume="allow",
+            group=args.wandb_group
         )
 
     run.start()
