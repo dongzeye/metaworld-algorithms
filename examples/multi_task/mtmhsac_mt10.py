@@ -53,7 +53,7 @@ def main() -> None:
             num_critics=2,
         ),
         training_config=OffPolicyTrainingConfig(
-            total_steps=int(2e7),
+            total_steps=int(2e6),
             buffer_size=int(1e6),
             batch_size=1280,
         ),

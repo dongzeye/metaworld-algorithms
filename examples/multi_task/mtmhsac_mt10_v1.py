@@ -55,7 +55,7 @@ def main() -> None:
             max_q_value=None,
         ),
         training_config=OffPolicyTrainingConfig(
-            total_steps=int(2e7),
+            total_steps=int(2e6),
             buffer_size=int(1e6),
             batch_size=1280,
         ),
